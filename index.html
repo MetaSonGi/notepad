@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>메모장</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="side-top">
+      <button id="newBtn" class="primary" title="새 메모 (Ctrl+Alt+N)">+ 새 메모</button>
+      <input id="search" type="search" placeholder="검색 (여러 단어 가능)" aria-label="메모 검색">
+    </div>
+    <ul id="list" aria-label="메모 목록"></ul>
+    <div class="side-bottom">
+      <button id="exportBtn">백업 내보내기</button>
+      <label class="btn">가져오기<input id="importFile" type="file" accept=".json,application/json" hidden></label>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="toolbar">
+      <button id="pinBtn" disabled>고정</button>
+      <button id="downloadBtn" disabled>.txt 저장</button>
+      <button id="deleteBtn" class="danger" disabled>삭제</button>
+      <span id="status" class="status" aria-live="polite"></span>
+    </div>
+    <textarea id="editor" placeholder="왼쪽에서 메모를 고르거나 새 메모를 만드세요" disabled spellcheck="false"></textarea>
+    <div class="footer"><span id="stats"></span><span>브라우저에만 저장됩니다 · 서버 전송 없음</span></div>
+  </main>
+</div>
+<script src="notes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

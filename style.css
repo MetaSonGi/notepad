@@ -1,0 +1,26 @@
+:root{--bg:#f7f7f5;--panel:#fff;--line:#e3e3df;--text:#1d1d1b;--muted:#6b6b66;--accent:#2f6fed;--danger:#c73a3a;--sel:#eaf0fd}
+@media (prefers-color-scheme:dark){:root{--bg:#161616;--panel:#1f1f1f;--line:#333;--text:#ececec;--muted:#9a9a9a;--accent:#6c9bff;--danger:#ff6b6b;--sel:#263248}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+.app{display:grid;grid-template-columns:280px 1fr;height:100vh}
+.side{display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--panel);min-height:0}
+.side-top,.side-bottom{display:flex;flex-direction:column;gap:8px;padding:12px}
+.side-bottom{flex-direction:row;border-top:1px solid var(--line)}
+#list{list-style:none;margin:0;padding:0 6px;overflow:auto;flex:1}
+#list li{padding:8px 10px;border-radius:8px;cursor:pointer;margin:2px 0}
+#list li[aria-selected=true]{background:var(--sel)}
+#list .t{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#list .d{font-size:12px;color:var(--muted)}
+#list .empty{color:var(--muted);cursor:default}
+button,.btn{white-space:nowrap;font:inherit;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);cursor:pointer;text-align:center}
+button:disabled{opacity:.45;cursor:default}
+.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.danger{color:var(--danger)}
+input[type=search]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text)}
+.main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.toolbar{display:flex;gap:8px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.status{margin-left:auto;font-size:13px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toolbar{flex-wrap:wrap}
+#editor{flex:1;border:0;resize:none;padding:18px 22px;font:16px/1.7 ui-monospace,Consolas,"D2Coding",monospace;background:transparent;color:var(--text);outline:none}
+.footer{display:flex;justify-content:space-between;padding:6px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+@media (max-width:700px){.app{grid-template-columns:1fr;grid-template-rows:42vh 1fr}.side{border-right:0;border-bottom:1px solid var(--line)}}
